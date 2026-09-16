@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>(function(){try{if(localStorage.getItem('theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}})();</script>
+<title>Young Eco-Star Program | Adamu Muhammad</title>
+<meta name="description" content="Research project: Young Eco-Star Program (2025).">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<link rel="stylesheet" href="../site.css">
+</head>
+<body>
+<header class="site">
+  <div class="nav-row wrap">
+    <a class="wordmark" href="../index.html">ADAMU MUHAMMAD</a>
+    <div class="nav-right">
+      <nav class="primary" aria-label="Primary">
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+      <a href="../key-projects.html">Key Projects</a>
+      <a href="../research.html">Research &amp; Publications</a>
+      <a href="../recognition.html">Recognition &amp; Presentations</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+      <a class="cv-btn" href="../assets/cv/adamu-muhammad-cv.pdf" target="_blank" rel="noopener">Download CV</a>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle color theme"></button>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
+    </div>
+  </div>
+  <nav class="mobile-menu wrap" id="mobileMenu" aria-label="Mobile" data-open="false">
+    <a href="../index.html">Home</a>
+    <a href="../about.html">About</a>
+    <a href="../key-projects.html">Key Projects</a>
+    <a href="../research.html">Research &amp; Publications</a>
+    <a href="../recognition.html">Recognition &amp; Presentations</a>
+    <a href="../contact.html">Contact</a>
+    <a class="cv-btn mobile" href="../assets/cv/adamu-muhammad-cv.pdf" target="_blank" rel="noopener">Download CV</a>
+  </nav>
+</header>
+<div class="wrap" id="top">
+
+<a class="back-link" href="../key-projects.html">&larr; Back to Key Projects</a>
+<div class="page-head">
+  <div class="eyebrow">Key Project</div>
+  <h1>Young Eco-Star Program</h1>
+  <div class="detail-meta-row">
+    <span>2025</span>
+    <span>U.S. Department of State’s Citizen Diplomacy Action Fund</span>
+    <span>Mentor, guest speaker, and observer</span>
+  </div>
+</div>
+
+<section style="border-top:none; padding-top:0;">
+  <div class="detail-block">
+    <h2>Overview</h2>
+    <p>An exchange programme for selected fellows from the United States, Nigeria, and Indonesia, run under the U.S. Department of State’s Citizen Diplomacy Action Fund.</p>
+  </div>
+</section>
+
+<section>
+  <div class="detail-block">
+    <h2>Activities</h2>
+    <ul style="margin:0; padding-left:20px; color:var(--ink);">
+      <li>Served as a mentor for the selected fellows.</li><li>Participated throughout the programme as a guest speaker and observer.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="section-head"><div class="eyebrow as-heading">Project Gallery</div></div>
+  <div class="gallery-grid"><figure><img src="../assets/projects/young-eco-star-program/gallery-01.jpg" alt="A group of Young Eco-Star Program fellows on the steps of a university building" loading="lazy"></figure><figure><img src="../assets/projects/young-eco-star-program/gallery-02.jpg" alt="Two fellows at a fountain during a programme excursion" loading="lazy"></figure><figure><img src="../assets/projects/young-eco-star-program/gallery-03.jpg" alt="Fellows on an open-sided excursion vehicle during a visit to a game reserve" loading="lazy"></figure><figure><img src="../assets/projects/young-eco-star-program/gallery-04.jpg" alt="Three fellows standing together during a programme excursion" loading="lazy"></figure><figure><img src="../assets/projects/young-eco-star-program/gallery-05.jpg" alt="Two fellows standing together at the entrance to a game reserve" loading="lazy"></figure></div>
+  <p class="gallery-note">Selected from the project’s photo records.</p>
+</section>
+
+<section>
+  <div class="section-head"><div class="eyebrow as-heading">Project Resources</div></div>
+  <div class="resource-list">
+    <a href="https://drive.google.com/drive/folders/1SlfI8FQ0rSO-0bslup_DVmv9BDHol0sc" target="_blank" rel="noopener">Full photo archive (Google Drive) <span class="arrow">&#8599;</span></a>
+  </div>
+</section>
+
+</div>
+<footer class="site">
+  <div class="wrap" style="display:flex; justify-content:space-between; gap:24px; flex-wrap:wrap; width:100%;">
+    <div>
+      <div class="fname">Adamu Muhammad</div>
+      <div>Research &middot; Policy &middot; Development</div>
+      <div style="margin-top:14px;">&copy; 2026 Adamu Muhammad</div>
+    </div>
+    <div class="fcols">
+      <div class="fcol">
+        <a href="../about.html">About</a>
+        <a href="../key-projects.html">Key Projects</a>
+        <a href="../research.html">Research &amp; Publications</a>
+      </div>
+      <div class="fcol">
+        <a href="../recognition.html">Recognition &amp; Presentations</a>
+        <a href="../contact.html">Contact</a>
+        <a href="../assets/cv/adamu-muhammad-cv.pdf" target="_blank" rel="noopener">Download CV</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script>
+  (function () {
+    var toggle = document.getElementById('navToggle');
+    var menu = document.getElementById('mobileMenu');
+    if (!toggle || !menu) return;
+    function setOpen(open) {
+      menu.dataset.open = String(open);
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    }
+    toggle.addEventListener('click', function () { setOpen(menu.dataset.open !== 'true'); });
+    menu.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () { setOpen(false); });
+    });
+  })();
+
+  (function () {
+    var btn = document.getElementById('themeToggle');
+    if (!btn) return;
+    var sunIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v3M12 18.5v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2.5 12h3M18.5 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>';
+    var moonIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.3A8.2 8.2 0 1 1 9.7 4a6.3 6.3 0 0 0 10.3 10.3z"/></svg>';
+    function current() {
+      return document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    }
+    function render() {
+      var isDark = current() === 'dark';
+      btn.innerHTML = isDark ? sunIcon : moonIcon;
+      btn.setAttribute('aria-label', isDark ? 'Switch to light theme' : 'Switch to dark theme');
+    }
+    render();
+    btn.addEventListener('click', function () {
+      var next = current() === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch (e) {}
+      render();
+    });
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,805 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Adamu Muhammad</title>
+<meta name="description" content="Adamu Muhammad — research and project work in public policy, climate action, and socio-economic development.">
+<script>(function(){try{if(localStorage.getItem('theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}})();</script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+  :root {
+    --paper: #FBF7F0;
+    --ink: #201B14;
+    --muted: #77705F;
+    --rule: #E6DCC7;
+    --accent: #BC4E17;
+    --accent-tint: #BC4E1716;
+    color-scheme: light;
+  }
+
+  :root[data-theme="dark"] {
+    --paper: #1C1712;
+    --ink: #F6EFE2;
+    --muted: #B4A891;
+    --rule: #3D3122;
+    --accent: #EC8A48;
+    --accent-tint: #EC8A4824;
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'DM Sans', -apple-system, 'Segoe UI', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    padding-inline: 24px;
+  }
+
+  .wrap {
+    max-width: 1240px;
+    margin: 0 auto;
+  }
+
+  h1, h2, h3, .serif {
+    font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+    font-weight: 500;
+    text-wrap: balance;
+    letter-spacing: -0.01em;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  .eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 500;
+  }
+
+  .rule { border: none; border-top: 1px solid var(--rule); margin: 0; }
+
+  /* header */
+  header.site {
+    position: sticky;
+    top: env(safe-area-inset-top, 0px);
+    z-index: 20;
+    background: var(--paper);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .nav-row {
+    max-width: 1240px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 0;
+    gap: 24px;
+  }
+
+  .wordmark {
+    font-family: 'Source Serif 4', serif;
+    font-size: 1.02rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+  }
+
+  .nav-right { display: flex; align-items: center; gap: 22px; }
+
+  nav.primary {
+    display: flex;
+    gap: 30px;
+    font-size: 0.86rem;
+    color: var(--muted);
+    flex-wrap: wrap;
+  }
+
+  nav.primary a { transition: color 0.15s ease; }
+  nav.primary a:hover, nav.primary a:focus-visible { color: var(--accent); }
+  nav.primary .current { color: var(--ink); }
+
+  .theme-toggle {
+    background: none;
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--muted);
+    cursor: pointer;
+    transition: color 0.15s ease, border-color 0.15s ease;
+  }
+  .theme-toggle:hover, .theme-toggle:focus-visible { color: var(--accent); border-color: var(--accent); }
+  .theme-toggle svg { width: 16px; height: 16px; display: block; }
+
+  .nav-toggle {
+    display: none;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  .nav-toggle .bar {
+    display: block;
+    width: 18px;
+    height: 1.5px;
+    margin: 4.5px auto;
+    background: var(--ink);
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+  .nav-toggle[aria-expanded="true"] .bar:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+  .nav-toggle[aria-expanded="true"] .bar:nth-child(2) { opacity: 0; }
+  .nav-toggle[aria-expanded="true"] .bar:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+  nav.mobile-menu {
+    display: none;
+    flex-direction: column;
+    padding: 4px 0 18px;
+    gap: 14px;
+    font-size: 0.92rem;
+    border-top: 1px solid var(--rule);
+  }
+  nav.mobile-menu[data-open="true"] { display: flex; }
+  nav.mobile-menu a { color: var(--muted); padding: 11px 0; min-height: 24px; }
+  nav.mobile-menu a:hover, nav.mobile-menu a:focus-visible { color: var(--accent); }
+  nav.mobile-menu .current { color: var(--ink); }
+
+  /* hero */
+  .hero {
+    padding: 72px 0 56px;
+    display: grid;
+    grid-template-columns: 1fr 260px;
+    gap: 48px;
+    align-items: center;
+  }
+
+  .hero-text { display: grid; gap: 22px; max-width: 640px; }
+
+  .hero h1 {
+    font-size: clamp(2.1rem, 4.2vw, 3.05rem);
+    line-height: 1.12;
+    margin: 0;
+  }
+
+  .hero .role {
+    font-size: 0.95rem;
+    color: var(--muted);
+    letter-spacing: 0.02em;
+  }
+
+  .hero .role .accent-dot { color: var(--accent); margin: 0 8px; }
+
+  .hero p.intro {
+    font-size: 1.08rem;
+    color: var(--ink);
+    max-width: 640px;
+    margin: 4px 0 0;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 28px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+    font-size: 0.92rem;
+  }
+
+  .hero-portrait {
+    width: 100%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    border-radius: 3px;
+    border: 1px solid var(--rule);
+    display: block;
+  }
+
+  .cv-btn {
+    font-size: 0.86rem;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    border-radius: 2px;
+    padding: 6px 14px;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+  }
+  .cv-btn:hover, .cv-btn:focus-visible { background: var(--accent); color: var(--paper); }
+  .cv-btn.mobile { justify-content: center; margin-top: 6px; }
+
+  .btn-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 4px;
+    transition: border-color 0.15s ease, color 0.15s ease;
+  }
+  .btn-link.primary { color: var(--accent); border-color: var(--accent); font-weight: 500; }
+  .btn-link:hover, .btn-link:focus-visible { border-color: var(--accent); color: var(--accent); }
+  .btn-link .arrow { transition: transform 0.15s ease; }
+  .btn-link:hover .arrow { transform: translateX(3px); }
+
+  section { padding: 56px 0; }
+  section + section { border-top: 1px solid var(--rule); }
+
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 34px;
+    flex-wrap: wrap;
+  }
+
+  .section-head h2 { font-size: 1.5rem; margin: 6px 0 0; }
+
+  .section-head .eyebrow.as-heading {
+    font-family: 'Source Serif 4', serif;
+    font-size: 1.32rem;
+    font-weight: 500;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--ink);
+  }
+
+  /* research focus */
+  .focus-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--rule);
+  }
+
+  .focus-item {
+    padding: 26px 22px 26px 0;
+    border-right: 1px solid var(--rule);
+  }
+  .focus-item:last-child { border-right: none; }
+  .focus-item:nth-child(n+1) { padding-left: 0; }
+
+  .focus-item .num {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.72rem;
+    color: var(--accent);
+    letter-spacing: 0.08em;
+  }
+
+  .focus-item h3 {
+    font-size: 1.08rem;
+    margin: 10px 0 8px;
+    font-weight: 500;
+  }
+
+  .focus-item p {
+    color: var(--muted);
+    font-size: 0.92rem;
+    margin: 0;
+  }
+
+  /* selected research - editorial list */
+  .research-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .research-item {
+    display: grid;
+    grid-template-columns: 84px 1fr;
+    gap: 28px;
+    padding: 28px 0;
+    border-top: 1px solid var(--rule);
+  }
+  .research-item:first-child { border-top: none; }
+
+  .research-item .year {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--muted);
+    font-size: 0.86rem;
+    padding-top: 3px;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .research-item h3 {
+    font-size: 1.22rem;
+    margin: 0 0 6px;
+    font-weight: 500;
+  }
+
+  .research-item .meta {
+    font-size: 0.82rem;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+
+  .research-item p.desc {
+    max-width: 680px;
+    color: var(--ink);
+    margin: 0 0 12px;
+    font-size: 0.96rem;
+  }
+
+  .story-link {
+    font-size: 0.86rem;
+    color: var(--accent);
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .story-link .arrow { transition: transform 0.15s ease; }
+  .research-item a:hover .arrow, .research-item a:focus-visible .arrow { transform: translateX(3px); }
+
+  .view-all { margin-top: 30px; }
+
+  /* key projects: horizontal scroll cards */
+  .project-card-row {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 10px;
+    margin: 0 -24px;
+    padding-inline: 24px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .project-card-row::-webkit-scrollbar { display: none; height: 0; }
+  .project-card {
+    flex: 0 0 250px;
+    scroll-snap-align: start;
+    display: block;
+  }
+  .project-card-link { display: block; }
+  .project-card img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    border-radius: 3px;
+    border: 1px solid var(--rule);
+    display: block;
+    margin-bottom: 12px;
+  }
+  .project-card h3 {
+    font-size: 1.02rem;
+    margin: 0 0 6px;
+    font-weight: 500;
+    line-height: 1.3;
+  }
+  .project-card .meta {
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  .project-card .story-link { font-size: 0.84rem; }
+  .project-card .card-links { display: flex; flex-direction: column; gap: 4px; align-items: flex-start; }
+  .project-card .story-link.ext { color: var(--muted); }
+  .project-card .story-link.ext:hover, .project-card .story-link.ext:focus-visible { color: var(--accent); }
+
+  .project-text .eyebrow { margin-bottom: 12px; }
+  .project-text h3 { font-size: 1.7rem; margin: 0 0 16px; }
+  .project-meta-row {
+    display: flex;
+    gap: 22px;
+    font-size: 0.84rem;
+    color: var(--muted);
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+  }
+  .project-text p { margin: 0 0 14px; max-width: 480px; }
+
+  /* outputs archive */
+  .outputs-list {
+    display: flex;
+    flex-direction: column;
+  }
+  .output-row {
+    display: grid;
+    grid-template-columns: 100px 90px 1fr auto;
+    gap: 20px;
+    align-items: baseline;
+    padding: 16px 0;
+    border-top: 1px solid var(--rule);
+    font-size: 0.92rem;
+  }
+  .output-row:first-child { border-top: none; }
+  .output-row .date { color: var(--muted); font-size: 0.8rem; font-variant-numeric: tabular-nums; }
+  .output-row .kind {
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .output-row .title { color: var(--ink); }
+  .output-row .go { color: var(--muted); font-size: 0.8rem; }
+
+  /* about preview */
+  .about-preview {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 40px;
+  }
+  .about-preview .portrait {
+    width: 100%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    display: block;
+  }
+  .about-preview p { max-width: 620px; font-size: 1rem; margin: 0 0 16px; }
+
+  /* profiles */
+  .profiles-row {
+    display: flex;
+    gap: 36px;
+    flex-wrap: wrap;
+    font-size: 0.92rem;
+  }
+  .profiles-row a { display: flex; align-items: center; gap: 8px; color: var(--muted); }
+  .profiles-row a:hover, .profiles-row a:focus-visible { color: var(--accent); }
+  .profiles-row .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); display: inline-block; }
+
+  footer.site {
+    border-top: 1px solid var(--rule);
+    padding: 40px 0 calc(40px + env(safe-area-inset-bottom, 0px));
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+    font-size: 0.84rem;
+    color: var(--muted);
+  }
+  footer.site .fname { font-family: 'Source Serif 4', serif; color: var(--ink); font-size: 0.98rem; margin-bottom: 4px; }
+  footer.site .fcols { display: flex; gap: 48px; flex-wrap: wrap; }
+  footer.site .fcol { display: flex; flex-direction: column; gap: 8px; }
+  footer.site .fcol a:hover, footer.site .fcol a:focus-visible { color: var(--accent); }
+
+  a:focus-visible, .nav-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  @media (max-width: 900px) {
+    .focus-grid { grid-template-columns: repeat(2, 1fr); }
+    .focus-item { border-bottom: 1px solid var(--rule); padding: 22px 20px 22px 0; }
+    .focus-item:nth-child(2n) { border-right: none; }
+    .project-feature { grid-template-columns: 1fr; }
+    .about-preview { grid-template-columns: 1fr; }
+    .about-preview .portrait { max-width: 180px; }
+    .hero { grid-template-columns: 1fr 200px; gap: 28px; }
+  }
+
+  @media (max-width: 620px) {
+    nav.primary { display: none; }
+    .cv-btn:not(.mobile) { display: none; }
+    .nav-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: none;
+      border: 1px solid var(--rule);
+      border-radius: 2px;
+      width: 44px;
+      height: 44px;
+    }
+    .nav-row { flex-wrap: wrap; }
+    .hero { grid-template-columns: 1fr; padding-top: 40px; }
+    .hero-portrait { max-width: 160px; margin: 0 auto; order: -1; }
+    .research-item { grid-template-columns: 1fr; gap: 6px; }
+    .research-item .year { font-size: 0.8rem; }
+    .output-row { grid-template-columns: 1fr; gap: 4px; }
+    .output-row .go { display: none; }
+    .focus-grid { grid-template-columns: 1fr; }
+    .focus-item { border-right: none; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+  }
+</style>
+
+<header class="site">
+  <div class="nav-row wrap">
+    <a class="wordmark" href="#top">ADAMU MUHAMMAD</a>
+    <div class="nav-right">
+      <nav class="primary" aria-label="Primary">
+      <a href="index.html" class="current">Home</a>
+      <a href="about.html">About</a>
+      <a href="key-projects.html">Key Projects</a>
+      <a href="research.html">Research &amp; Publications</a>
+      <a href="recognition.html">Recognition &amp; Presentations</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+      <a class="cv-btn" href="assets/cv/adamu-muhammad-cv.pdf" target="_blank" rel="noopener">Download CV</a>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle color theme"></button>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
+    </div>
+  </div>
+  <nav class="mobile-menu wrap" id="mobileMenu" aria-label="Mobile" data-open="false">
+    <a href="index.html" class="current">Home</a>
+    <a href="about.html">About</a>
+    <a href="key-projects.html">Key Projects</a>
+    <a href="research.html">Research &amp; Publications</a>
+    <a href="recognition.html">Recognition &amp; Presentations</a>
+    <a href="contact.html">Contact</a>
+    <a class="cv-btn mobile" href="assets/cv/adamu-muhammad-cv.pdf" target="_blank" rel="noopener">Download CV</a>
+  </nav>
+</header>
+
+<div class="wrap" id="top">
+
+  <section class="hero" style="border-top:none;">
+    <div class="hero-text">
+      <div class="eyebrow">Research &middot; Policy &middot; Development</div>
+      <h1>Research and project work in public policy, climate action, and socio-economic development.</h1>
+      <p class="intro">Adamu Muhammad is an MSc Public Policy candidate at HSE University, Moscow, with a track record of leading research and community-development projects across Nigeria.</p>
+      <div class="hero-actions">
+        <a class="btn-link primary" href="#research">Explore research <span class="arrow">&rarr;</span></a>
+        <a class="btn-link" href="assets/cv/adamu-muhammad-cv.pdf" target="_blank" rel="noopener">Download CV <span class="arrow">&darr;</span></a>
+      </div>
+    </div>
+    <img class="hero-portrait" src="assets/profile/adamu-portrait.jpg" alt="Adamu Muhammad at the HSE Center for African Studies Conference on Applied Research, September 2026">
+  </section>
+
+  <section id="focus">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow as-heading">Research Focus</div>
+      </div>
+    </div>
+    <div class="focus-grid">
+      <div class="focus-item">
+        <div class="num">01</div>
+        <h3>Public Policy</h3>
+        <p>Policy analysis and evidence-based formulation, the focus of his current MSc research at HSE University.</p>
+      </div>
+      <div class="focus-item">
+        <div class="num">02</div>
+        <h3>Climate &amp; Sustainable Development</h3>
+        <p>Climate action advocacy and youth training programmes delivered across northern Nigeria.</p>
+      </div>
+      <div class="focus-item">
+        <div class="num">03</div>
+        <h3>Political Economy</h3>
+        <p>Published research on Nigerian foreign policy, governance, and political economy questions.</p>
+      </div>
+      <div class="focus-item">
+        <div class="num">04</div>
+        <h3>Data &amp; Evidence</h3>
+        <p>Research design, stakeholder interviews, and quantitative and qualitative data analysis.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="research">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow as-heading">Selected Research</div>
+      </div>
+    </div>
+    <div class="research-list">
+      <div class="research-item">
+        <div class="year">2023</div>
+        <div>
+          <h3>Climate Change in Africa: Emerging Impacts and Policy Challenges</h3>
+          <div class="meta">Muhammad, A. &middot; Article &middot; Applied Worldwide</div>
+          <p class="desc">Examines climate change as a threat to African development across agriculture, water resources, and health, and sets out policy challenges including limited institutional capacity and financing.</p>
+          <a class="story-link" href="https://nigeria.appliedworldwide.com/climate-change-in-africa-emerging-impacts-and-policy-challenges/">Read the full article <span class="arrow">&rarr;</span></a>
+        </div>
+      </div>
+      <div class="research-item">
+        <div class="year">2020</div>
+        <div>
+          <h3>Nigeria and the Dilemma of Global Image: A Comparative Analysis of Goodluck Jonathan and Muhammadu Buhari Administrations&rsquo; Foreign Policy (2011&ndash;2019)</h3>
+          <div class="meta">Sale, A. &amp; Muhammad, A. &middot; Journal article &middot; IOSR Journal of Humanities and Social Science, Vol. 25, Issue 11</div>
+          <p class="desc">A comparative study of how two administrations&rsquo; foreign policy choices shaped Nigeria&rsquo;s international standing, applying Traits Theory to leadership and image-building.</p>
+          <a class="story-link" href="https://www.iosrjournals.org/iosr-jhss/papers/Vol.25-Issue11/Series-6/B2511060513.pdf">Read the full paper (PDF) <span class="arrow">&rarr;</span></a>
+        </div>
+      </div>
+      <div class="research-item">
+        <div class="year">2024</div>
+        <div>
+          <h3>The Challenges and Prospects of Cotton Production in Gombe State: A Political Economy Perspective</h3>
+          <div class="meta">Saleh, A. &amp; Muhammad, A. &middot; Journal article &middot; Jewel Journal of Politics, Vol. 2, No. 2</div>
+          <p class="desc">A political economy study of Gombe State&rsquo;s cotton sector, using survey data from 351 cotton farmers to identify insecurity, poor seedlings, and pricing as the leading causes of declining production.</p>
+          <a class="story-link" href="assets/papers/cotton-production-gombe-state.pdf">Read the full paper (PDF) <span class="arrow">&rarr;</span></a>
+        </div>
+      </div>
+      <div class="research-item">
+        <div class="year">2021</div>
+        <div>
+          <h3>The Role of Technology and Innovation in Tackling Insecurity and Accelerating Development in Nigeria</h3>
+          <div class="meta">Muhammad, A. &middot; Journal article &middot; BRICS Journal of Educational Research, Vol. 11, Issue 2</div>
+          <p class="desc">Argues that technology and innovation can help Nigeria counter insecurity and diversify its economy, while identifying brain drain and skills shortages as key obstacles to that progress.</p>
+          <a class="story-link" href="assets/papers/role-of-technology-and-innovation.pdf">Read the full paper (PDF) <span class="arrow">&rarr;</span></a>
+        </div>
+      </div>
+      <div class="research-item">
+        <div class="year">2021</div>
+        <div>
+          <h3>Medical Brain Drain: Causes and Implications in Nigeria&rsquo;s Health Care System</h3>
+          <div class="meta">Muhammad, A. &amp; Aji, S. &middot; Journal article &middot; BRICS Journal of Educational Research, Vol. 11, Issue 3</div>
+          <p class="desc">Examines why Nigerian doctors and nurses migrate abroad and how that outflow weakens the country&rsquo;s health care system, recommending structural and economic reforms to encourage a brain gain.</p>
+          <a class="story-link" href="assets/papers/medical-brain-drain.pdf">Read the full paper (PDF) <span class="arrow">&rarr;</span></a>
+        </div>
+      </div>
+    </div>
+    <a class="btn-link view-all" href="research.html">View all research &amp; publications <span class="arrow">&rarr;</span></a>
+  </section>
+
+  <section id="key-projects">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow as-heading">Key Projects</div>
+      </div>
+    </div>
+    <div class="project-card-row">
+      <div class="project-card">
+        <a class="project-card-link" href="projects/climatech-drive-gombe.html">
+          <img src="assets/projects/climatech-drive-gombe/gallery-01.jpg" alt="Climatech Drive Gombe team members in matching green programme t-shirts" loading="lazy">
+          <h3>Climatech Drive Gombe</h3>
+          <div class="meta">Sep 2023&ndash;Feb 2024 &middot; Meridian International Centre, USA</div>
+        </a>
+        <div class="card-links">
+          <a class="story-link" href="projects/climatech-drive-gombe.html">View project <span class="arrow">&rarr;</span></a>
+          <a class="story-link ext" href="https://drive.google.com/drive/folders/1--EhaX3Xv1LpG1UXEnBZrRAkH1f4H1yn" target="_blank" rel="noopener">See full gallery <span class="arrow">&#8599;</span></a>
+        </div>
+      </div>
+      <div class="project-card">
+        <a class="project-card-link" href="projects/education-for-better-society.html">
+          <img src="assets/projects/education-for-better-society/gallery-02.jpg" alt="Primary school pupils holding up donated books and materials in a classroom" loading="lazy">
+          <h3>Education For Better Society</h3>
+          <div class="meta">Jun 2022&ndash;Present &middot; The Pollination Project, USA</div>
+        </a>
+        <div class="card-links">
+          <a class="story-link" href="projects/education-for-better-society.html">View project <span class="arrow">&rarr;</span></a>
+          <a class="story-link ext" href="https://drive.google.com/drive/folders/11xPMxXelErMj_s-G-d2ml76tvJjid85l" target="_blank" rel="noopener">See full gallery <span class="arrow">&#8599;</span></a>
+        </div>
+      </div>
+      <div class="project-card">
+        <a class="project-card-link" href="projects/sdg-advocacy-project.html">
+          <img src="assets/projects/sdg-advocacy-project/gallery-02.jpg" alt="Students holding up SDG cards during a classroom advocacy session" loading="lazy">
+          <h3>SDGs Advocacy Project</h3>
+          <div class="meta">10&ndash;15 Nov 2022</div>
+        </a>
+        <div class="card-links">
+          <a class="story-link" href="projects/sdg-advocacy-project.html">View project <span class="arrow">&rarr;</span></a>
+          <a class="story-link ext" href="https://drive.google.com/drive/folders/1mA0kwNKyJhcI1f7lTiJ_ZRR2zAP2Nh2i" target="_blank" rel="noopener">See full gallery <span class="arrow">&#8599;</span></a>
+        </div>
+      </div>
+      <div class="project-card">
+        <a class="project-card-link" href="projects/youths-climate-change-sustainable-development-gombe.html">
+          <img src="assets/projects/youths-climate-change-sustainable-development-gombe/gallery-02.jpg" alt="Students and organisers posing outside a school building holding SDG cards" loading="lazy">
+          <h3>Youths, Climate Change, and Sustainable Development in Gombe State</h3>
+          <div class="meta">10&ndash;19 Jun 2023 &middot; Sustainable Development Solutions Network</div>
+        </a>
+        <div class="card-links">
+          <a class="story-link" href="projects/youths-climate-change-sustainable-development-gombe.html">View project <span class="arrow">&rarr;</span></a>
+          <a class="story-link ext" href="https://drive.google.com/drive/folders/1gYca1-ZpF7ODwkzlZ6ruh30qZBC5Em02" target="_blank" rel="noopener">See full gallery <span class="arrow">&#8599;</span></a>
+        </div>
+      </div>
+      <div class="project-card">
+        <a class="project-card-link" href="projects/young-eco-star-program.html">
+          <img src="assets/projects/young-eco-star-program/gallery-04.jpg" alt="A group of Young Eco-Star Program fellows on the steps of a university building" loading="lazy">
+          <h3>Young Eco-Star Program</h3>
+          <div class="meta">2025 &middot; U.S. Department of State&rsquo;s Citizen Diplomacy Action Fund</div>
+        </a>
+        <div class="card-links">
+          <a class="story-link" href="projects/young-eco-star-program.html">View project <span class="arrow">&rarr;</span></a>
+          <a class="story-link ext" href="https://drive.google.com/drive/folders/1SlfI8FQ0rSO-0bslup_DVmv9BDHol0sc" target="_blank" rel="noopener">See full gallery <span class="arrow">&#8599;</span></a>
+        </div>
+      </div>
+    </div>
+    <a class="btn-link view-all" href="key-projects.html">View all key projects <span class="arrow">&rarr;</span></a>
+  </section>
+
+  <section id="about">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow as-heading">About</div>
+      </div>
+    </div>
+    <div class="about-preview">
+      <img class="portrait" src="assets/profile/adamu-portrait.jpg" alt="Adamu Muhammad at the HSE Center for African Studies Conference on Applied Research, September 2026">
+      <div>
+        <p>Adamu Muhammad is a research-driven MSc candidate in Public Policy at HSE University, Moscow, with a record of leading research and development projects, managing multi-stakeholder initiatives, and delivering impact in policy, climate change, and socio-economic development.</p>
+        <p>His work combines data analysis, research design, and evidence-based policy formulation with hands-on project management across Nigeria.</p>
+        <a class="btn-link" href="about.html">More about Adamu <span class="arrow">&rarr;</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="profiles">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Academic &amp; Professional Profiles</div>
+      </div>
+    </div>
+    <div class="profiles-row">
+      <a href="https://www.linkedin.com/in/adamumuhammad576b6720a"><span class="dot"></span>LinkedIn</a>
+      <a href="https://www.researchgate.net/profile/Adamu-Muhammad-2"><span class="dot"></span>ResearchGate</a>
+      <a href="https://orcid.org/0009-0004-5620-2565"><span class="dot"></span>ORCID</a>
+      <a href="https://github.com/adamumuhammad01"><span class="dot"></span>GitHub</a>
+    </div>
+  </section>
+
+</div>
+
+<footer class="site">
+  <div class="wrap" style="display:flex; justify-content:space-between; gap:24px; flex-wrap:wrap; width:100%;">
+    <div>
+      <div class="fname">Adamu Muhammad</div>
+      <div>Research &middot; Policy &middot; Development</div>
+      <div style="margin-top:14px;">&copy; 2026 Adamu Muhammad</div>
+    </div>
+    <div class="fcols">
+      <div class="fcol">
+        <a href="about.html">About</a>
+        <a href="key-projects.html">Key Projects</a>
+        <a href="research.html">Research &amp; Publications</a>
+      </div>
+      <div class="fcol">
+        <a href="recognition.html">Recognition &amp; Presentations</a>
+        <a href="contact.html">Contact</a>
+        <a href="assets/cv/adamu-muhammad-cv.pdf" target="_blank" rel="noopener">Download CV</a>
+      </div>
+      <div class="fcol">
+        <a href="https://www.linkedin.com/in/adamumuhammad576b6720a">LinkedIn</a>
+        <a href="https://www.researchgate.net/profile/Adamu-Muhammad-2">ResearchGate</a>
+        <a href="https://orcid.org/0009-0004-5620-2565">ORCID</a>
+        <a href="https://github.com/adamumuhammad01">GitHub</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var toggle = document.getElementById('navToggle');
+    var menu = document.getElementById('mobileMenu');
+    if (!toggle || !menu) return;
+
+    function setOpen(open) {
+      menu.dataset.open = String(open);
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    }
+
+    toggle.addEventListener('click', function () {
+      setOpen(menu.dataset.open !== 'true');
+    });
+
+    menu.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () { setOpen(false); });
+    });
+  })();
+
+  (function () {
+    var btn = document.getElementById('themeToggle');
+    if (!btn) return;
+    var sunIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v3M12 18.5v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2.5 12h3M18.5 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>';
+    var moonIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.3A8.2 8.2 0 1 1 9.7 4a6.3 6.3 0 0 0 10.3 10.3z"/></svg>';
+    function current() {
+      return document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    }
+    function render() {
+      var isDark = current() === 'dark';
+      btn.innerHTML = isDark ? sunIcon : moonIcon;
+      btn.setAttribute('aria-label', isDark ? 'Switch to light theme' : 'Switch to dark theme');
+    }
+    render();
+    btn.addEventListener('click', function () {
+      var next = current() === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch (e) {}
+      render();
+    });
+  })();
+</script>
